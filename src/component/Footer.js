@@ -1,5 +1,4 @@
 import React from 'react'
-import { Icon } from '@iconify/react';
 function Footer() {
   return (
     <div className="container">
