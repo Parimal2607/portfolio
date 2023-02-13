@@ -1,35 +1,45 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import AnimatedBg from './AnimatedBg'
 import Image1 from "../assets/images/2-small.png"
-import Image2 from "../assets/images/10.png"
+import Image2 from "../assets/images/1673255222479.jpg"
 import Image3 from "../assets/images/12.png"
+import Nav from './Nav'
 const Data = [
   {
     id: 1,
-    description: "At this School, our mission is to balance a rigorous comprehensive college preparatory curriculum with healthy social and emotional development",
+    description: "Parimal is great at Choosing the structure and appearance of web pages. He can look after the design conclusions depending on guaranteeing an optimistic user understanding. He is great at Adding new features to improve the user experience. Parimal is great at ensuring that web design is mobile-friendly",
     img:  Image1 ,
-    name: "manishekher",
-    post: "Frontend developer"
+    name: "Harsh Chauhan",
+    post: "UI developer"
   },
   {
     id: 2,
-    description: "At this School, our mission is to balance a rigorous comprehensive college preparatory curriculum with healthy social and emotional development",
+    description: "Parimal is a self-motivated team member and a pleasure to work with. He demonstrates superior technical ability and produces work of exceptional quality. Parimal takes the time to fully understand the scope of projects and displays a keen attention to detail, but often at the expense of effective time management.",
     img: Image2 ,
-    name: "shyam",
+    name: "Mehul Mistry",
     post: "Frontend developer"
   },
   {
     id: 3,
-    description: "At this School, our mission is to balance a rigorous comprehensive college preparatory curriculum with healthy social and emotional development",
+    description: "Parimal can skillfully work together with other team partners and stakeholders. He is good at keeping the brand’s identity consistent throughout the design. He has a solid grasp of front-end development and is an excellent learner. He is at ease speaking in front of groups, which is unusual for a developer.",
     img:  Image3 ,
     name: "sunny",
-    post: "Frontend developer"
+    post: "BA"
   },
 ]
 
 function Testimonial() {
+  useEffect(() => {
+    const body = document.querySelector('#root');
+  
+    body.scrollIntoView({
+        behavior: 'smooth'
+    }, 500)
+  
+  }, []);
   return (
     <>
+    <Nav/>
       <AnimatedBg />
       <section className="home-testimonial">
         <div className="container-fluid">
@@ -46,8 +56,8 @@ function Testimonial() {
               <div className="row">
                 {Data.map((detail, id) => {
                   return (
-                    <div className="col-md-4 style-3" key={id}>
-                      <div className="tour-item ">
+                    <div className="col-lg-4 style-3" key={id}>
+                      <div className="tour-item">
                         <div className="tour-desc">
                           <div className="tour-text color-grey-3 text-center">&ldquo;{detail.description}&rdquo;</div>
                           <div className="d-flex justify-content-center pt-2 pb-2"><img className="tm-people" src={detail.img} alt="image" /></div>

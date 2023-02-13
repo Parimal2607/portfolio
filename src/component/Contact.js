@@ -1,38 +1,85 @@
-import React from 'react'
-
+import { useFormik } from 'formik';
+import React, { useEffect } from 'react'
+import { LoginSchema } from '../schemas';
+import AnimatedBg from "./AnimatedBg"
+import Nav from './Nav'
+const initialValues = {
+    email: "",
+    name: "",
+    number: "",
+};
 function Contact() {
-  return (
-    <div class="container contact-form">
-    <div class="contact-image">
-        <img src="https://image.ibb.co/kUagtU/rocket_contact.png" alt="rocket_contact"/>
-    </div>
-    <form method="post">
-        <h3>Drop Us a Message</h3>
-       <div class="row">
-            <div class="col-md-6">
-                <div class="form-group">
-                    <input type="text" name="txtName" class="form-control" placeholder="Your Name *" value="" />
+    const { values, errors, touched, handleBlur, handleChange, handleSubmit } = useFormik({
+        initialValues: initialValues,
+        validationSchema: LoginSchema,
+        onSubmit: (values, action) => {
+            console.log(values)
+            action.resetForm()
+        }
+    })
+    useEffect(() => {
+        const body = document.querySelector('#root');
+      
+        body.scrollIntoView({
+            behavior: 'smooth'
+        }, 500)
+      
+      }, []);
+    return (
+        <>
+            <Nav />
+            <div className='contact-me'>
+                <AnimatedBg />
+                <div className="container">
+                    <div className="row contact-header">
+                        <h1>contact me</h1>
+                    </div>
+                    <div className="row">
+                        <h4 >I'd love to hear from you!</h4>
+                    </div>
+                    <form onSubmit={handleSubmit}>
+                        <div className="row input-container">
+                            <div className="col-xs-12">
+                                <div className="styled-input wide">
+                                    <input type="text" required id="name" name='name' value={values.name} onChange={handleChange} onBlur={handleBlur} />
+                                    <label>Name</label>
+                                    {errors.name && touched.name ? <p className='error-msg'>{errors.name}</p> : null}
+                                </div>
+                            </div>
+                            <div className="col-md-6 col-sm-12">
+                                <div className="styled-input">
+                                    <input type="text" required id="email" name='email' value={values.email} onChange={handleChange} onBlur={handleBlur} />
+                                    {errors.email && touched.email ? <p className='error-msg'>{errors.email}</p> : null}
+                                    <label>Email</label>
+                                </div>
+                            </div>
+                            <div className="col-md-6 col-sm-12">
+                                <div className="styled-input" >
+                                    <input type="text" required id="number" name="number" value={values.number} onChange={handleChange} onBlur={handleBlur}/>
+                                    <label>Phone Number</label>
+                                    {errors.number && touched.number ? <p className='error-msg'>{errors.number}</p> : null}
+                                </div>
+                            </div>
+                            <div className="col-xs-12">
+                                <div className="styled-input wide">
+                                    <textarea required></textarea>
+                                    <label>Message</label>
+                                </div>
+                            </div>
+                            <div className="col-xs-12">
+                                <button class="cssbuttons-io-button" type="submit"> Send Message
+                                    <div class="icon">
+                                        <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"></path><path d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z" fill="currentColor"></path></svg>
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
-                <div class="form-group">
-                    <input type="text" name="txtEmail" class="form-control" placeholder="Your Email *" value="" />
-                </div>
-                <div class="form-group">
-                    <input type="text" name="txtPhone" class="form-control" placeholder="Your Phone Number *" value="" />
-                </div>
-                <div class="form-group">
-                    <input type="submit" name="btnSubmit" class="btnContact" value="Send Message" />
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="form-group">
-                    <textarea name="txtMsg" class="form-control" placeholder="Your Message *" style="width: 100%; height: 150px;"></textarea>
-                </div>
-            </div>
-        </div>
-    </form>
-</div>
 
-  )
+            </div>
+        </>
+    )
 }
 
 export default Contact

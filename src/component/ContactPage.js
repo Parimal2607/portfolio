@@ -1,8 +1,7 @@
 import React from 'react'
-import Nav from './Nav'
+import Contact from './Contact'
 
-
-function Navbar() {
+function ContactPage() {
   return (
     <>
       <div className='about-me'>
@@ -23,16 +22,7 @@ function Navbar() {
           </div>
         </div>
         <div className="text animated-bg-color">
-          <div className='my-navbar'>
-            {/* <a href="#" className="logo" target="_blank">
-        <img src="https://assets.codepen.io/1462889/fcy.png" alt="" />
-      </a> */}
-            <Nav />
-
-            <div className="section-center content">
-              <h1 className="mb-0 ">Hello, I'm Parimal Sharma.<br />I'm Frontend Developer.</h1>
-            </div>
-          </div>
+          <Contact/>
         </div>
       </div>
 
@@ -40,4 +30,4 @@ function Navbar() {
   )
 }
 
-export default Navbar
+export default ContactPage

@@ -2,11 +2,12 @@ import React from 'react'
 import FollowMe from './FollowMe'
 
 import MyInfo from './MyInfo'
+import Nav from './Nav'
 
 function AboutMe() {
   return (
     <div className='about-me'>
-     
+
       <div className="splash">
         <div className="splash_logo">
           PS
@@ -23,9 +24,7 @@ function AboutMe() {
         </div>
       </div>
       <div className="align-items-center d-flex text animated-bg-color">
-        {/* <p>Hey..</p>
-  <p>want more about me?</p>
-  <button>More</button> */}
+       <Nav/>
        <MyInfo/>
        <FollowMe/>
       </div>
