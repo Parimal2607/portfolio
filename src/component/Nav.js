@@ -8,7 +8,7 @@ function Nav() {
       <label for="menu-icon"></label>
       <nav className="nav">
         <ul className="pt-5">
-          <li><Link to="/">Home</Link></li>
+          <li><Link to="/portfolio">Home</Link></li>
           <li><Link to="/about-me">About</Link></li>
           <li><Link to="/testimonial">Testimonial</Link></li>
           <li><Link to="/contact-me">Contact</Link></li>
