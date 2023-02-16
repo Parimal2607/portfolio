@@ -7,6 +7,7 @@ const initialValues = {
     email: "",
     name: "",
     number: "",
+    description:""
 };
 function Contact() {
     const { values, errors, touched, handleBlur, handleChange, handleSubmit } = useFormik({
@@ -14,17 +15,42 @@ function Contact() {
         validationSchema: LoginSchema,
         onSubmit: (values, action) => {
             console.log(values)
+            // const tempObj = {
+            //     from: "parimalkumars@zignuts.com",
+            //     to: values?.email,
+            //     subject: values?.name,
+            //     text: values?.description
+            // }
+
+            // let headers = new Headers();
+
+            // headers.append('Content-Type', 'application/json');
+            // headers.append('Accept', 'application/json');
+            // headers.append('Authorization', 'Basic ' + base64.encode(username + ":" + password));
+            // headers.append('Origin', 'http://localhost:3002');
+
+
+            // const response = fetch('http://localhost:3002/api/send', {
+            //     method: 'post',
+            //     mode: 'cors',
+            //     headers: headers,
+            //     body: JSON.stringify({ ...tempObj }),
+
+            // }).then(response => response.json())
+            //     .then(json => console.log(json))
+            //     .catch(error => console.log('Authorization failed: ' + error.message));
             action.resetForm()
         }
+
     })
     useEffect(() => {
         const body = document.querySelector('#root');
-      
+
         body.scrollIntoView({
             behavior: 'smooth'
         }, 500)
-      
-      }, []);
+
+    }, []);
     return (
         <>
             <Nav />
@@ -55,14 +81,14 @@ function Contact() {
                             </div>
                             <div className="col-md-6 col-sm-12">
                                 <div className="styled-input" >
-                                    <input type="text" required id="number" name="number" value={values.number} onChange={handleChange} onBlur={handleBlur}/>
+                                    <input type="text" required id="number" name="number" value={values.number} onChange={handleChange} onBlur={handleBlur} />
                                     <label>Phone Number</label>
                                     {errors.number && touched.number ? <p className='error-msg'>{errors.number}</p> : null}
                                 </div>
                             </div>
                             <div className="col-xs-12">
                                 <div className="styled-input wide">
-                                    <textarea required></textarea>
+                                    <textarea name='description' value={values.description} onChange={handleChange} onBlur={handleBlur} required></textarea>
                                     <label>Message</label>
                                 </div>
                             </div>
