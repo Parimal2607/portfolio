@@ -58,7 +58,7 @@ function Contact() {
                 <AnimatedBg />
                 <div className="container">
                     <div className="row contact-header">
-                        <h1>contact me</h1>
+                        <h1>CONTACT ME</h1>
                     </div>
                     <div className="row">
                         <h4 >I'd love to hear from you!</h4>

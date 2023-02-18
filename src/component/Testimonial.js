@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import AnimatedBg from './AnimatedBg'
-import Image1 from "../assets/images/2-small.png"
+import Image1 from "../assets/images/UiDev.jpg"
 import Image2 from "../assets/images/1673255222479.jpg"
 import Image3 from "../assets/images/12.png"
 import Nav from './Nav'
@@ -10,14 +10,14 @@ const Data = [
     description: "Parimal is great at Choosing the structure and appearance of web pages. He can look after the design conclusions depending on guaranteeing an optimistic user understanding. He is great at Adding new features to improve the user experience. Parimal is great at ensuring that web design is mobile-friendly",
     img:  Image1 ,
     name: "Harsh Chauhan",
-    post: "UI developer"
+    post: "UI DEVELOPER"
   },
   {
     id: 2,
     description: "Parimal is a self-motivated team member and a pleasure to work with. He demonstrates superior technical ability and produces work of exceptional quality. Parimal takes the time to fully understand the scope of projects and displays a keen attention to detail, but often at the expense of effective time management.",
     img: Image2 ,
     name: "Mehul Mistry",
-    post: "Frontend developer"
+    post: "FRONTEND DEVELOPER"
   },
   {
     id: 3,

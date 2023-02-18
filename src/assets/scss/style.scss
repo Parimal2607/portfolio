@@ -766,7 +766,7 @@ h6 {
   .card-container {
     // background-color: #231E39;
     border-radius: 5px;
-    box-shadow: 0px 10px 20px -10px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 10px 20px -1px rgba(0, 0, 0, 0.75);
     color: #B3B8CD;
     padding-top: 30px;
     position: relative;
@@ -791,6 +791,7 @@ h6 {
     border: 1px solid #03BFCB;
     border-radius: 50%;
     padding: 7px;
+    max-width: 100px;
   }
 
   button.primary {
@@ -1075,6 +1076,7 @@ h6 {
   }
 
   .contact-header {
+    margin-top: 3rem;
     @include for-size(sm) {
       margin-top: 120px;
     }

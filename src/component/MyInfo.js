@@ -1,5 +1,7 @@
 import React, { useEffect } from 'react'
 import AnimatedBg from './AnimatedBg';
+import ProfileImage from "../assets/images/profile.jpeg"
+import DownloadImage from "../assets/images/download.svg"
 function MyInfo() {
   const onButtonClick = () => {
     // using Java Script method to get PDF file
@@ -29,8 +31,8 @@ function MyInfo() {
       <div className='container'>
         <div className='my-info '>
           <div className="card-container mx-auto  ">
-            <span className="pro" onClick={onButtonClick} role="button">CV</span>
-            <img className="round" src="https://randomuser.me/api/portraits/women/79.jpg" alt="user" />
+            <span className="pro" onClick={onButtonClick} role="button"><img src={DownloadImage}/></span>
+            <img className="round" src={ProfileImage} alt="user" />
             <h3>Parimal Sharma</h3>
             <h6>India</h6>
             <p>User interface designer and <br /> front-end developer</p>
